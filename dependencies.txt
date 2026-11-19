@@ -1,0 +1,24 @@
+# HTTP routing
+cargo add axum
+
+# Async runtime
+cargo add tokio --features full
+
+# JSON serialization
+cargo add serde --features derive
+cargo add serde_json
+
+# PostgreSQL, connection pooling, and migrations
+cargo add sqlx --no-default-features --features runtime-tokio,tls-rustls,postgres,macros,migrate
+
+# Load configuration from a .env file
+cargo add dotenvy
+
+# Migration CLI
+cargo install sqlx-cli --locked --no-default-features --features rustls,postgres
+
+# Password hashing
+cargo add argon2 --features getrandom
+
+# Login and session management
+cargo add axum-login tower-sessions
