@@ -1,10 +1,8 @@
-use axum::{routing::get, Router};
+use axum::Router;
+
+use crate::routes::health;
 
 pub fn build_router() -> Router {
     Router::new()
-        .route("/health", get(health))
-}
-
-async fn health() -> &'static str {
-    "OK"
+        .merge(health::routes())
 }
